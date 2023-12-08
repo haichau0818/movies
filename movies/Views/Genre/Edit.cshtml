@@ -1,6 +1,8 @@
 ﻿@model movies.Models.Domain.Genre
-<form class="w-40" asp-action="Add" method="post">
-    <h2 class="pb-10">Add Genre</h2>
+<form class="w-40" asp-action="Edit" method="post">
+    <h2 class="pb-10">Edit Genre</h2>
+    <input type="hidden" asp-for="Id">
+
     <div class="input-container">
         <label asp-for="Name" class="w-40">GenreName</label>
         <input type="text" class="input" asp-for="Name">
@@ -17,6 +19,6 @@
     }
     <div class="input-container">
         <button class="btn btn-default" type="submit">Save</button>
-        <a class="btn btn-sec" href="/Genre/GenreList">All records</a>
+        <a class="btn btn-sec" href="/genre/all">All records</a>
     </div>
 </form>

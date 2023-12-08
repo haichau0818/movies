@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using movies.Models.Domain;
-using movies.Models.DTO;
 using movies.Repositories.Abstract;
 
 namespace movies.Repositories.Implementation

@@ -1,4 +1,4 @@
-﻿namespace movies.Models.DTO
+﻿namespace movies.Models.Domain
 {
     public class MovieGenre
     {

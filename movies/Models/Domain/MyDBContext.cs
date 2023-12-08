@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using movies.Models.DTO;
 using System.Data;
 
 namespace movies.Models.Domain

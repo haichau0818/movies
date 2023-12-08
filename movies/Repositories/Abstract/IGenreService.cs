@@ -1,4 +1,4 @@
-﻿using movies.Models.DTO;
+﻿using movies.Models.Domain;
 
 namespace movies.Repositories.Abstract
 {

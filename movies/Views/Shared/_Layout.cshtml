@@ -23,7 +23,7 @@
             movie store
         </div>
         <ul class="nav-link">
-            <li><a class="active" href="Home/Index.html">Home</a></li>
+            <li><a class="active" href="/">Home</a></li>
             <li><a href="/Home/About">About</a></li>
             @{
                 if (User.IsInRole("Admin"))
@@ -32,8 +32,8 @@
                         <a href="#">Admin <i class="fa fa-caret-down"></i></a>
 
                         <ul class="dropdown-nav-link">
-                            <li><a href="/Genre/Add">Genre</a></li>
-                            <li><a href="/table.html">Table</a></li>
+                            <li><a href="/genre/add">Genre</a></li>
+                            <li><a href="/genre/all">List genre</a></li>
                             <li><a href="/movie-detail.html">Movie Detail</a></li>
                             <li><a href="#">Link 4</a></li>
                             <li><a href="/UserAuthentication/Logout">Logout</a></li>

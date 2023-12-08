@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using movies.Models.DTO;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using movies.Models.Domain;
 using movies.Repositories.Abstract;
 
 namespace movies.Controllers
 {
+    //[Authorize(Roles = "admin")]
     public class GenreController : Controller
     {
         private readonly IGenreService _genreService;
@@ -11,11 +13,15 @@ namespace movies.Controllers
         {
             _genreService = genreService;
         }
+
+        [Route("/genre/add")]
         public IActionResult Add()
         {
             return View();
         }
+
         [HttpPost]
+        [Route("/genre/add")]
         public IActionResult Add(Genre model)
         {
             if (!ModelState.IsValid)
@@ -34,12 +40,15 @@ namespace movies.Controllers
             
         }
 
+        [Route("/genre/edit")]
         public IActionResult Edit(int id)
         {
             var model = _genreService.GetById(id);
             return View(model);
         }
+
         [HttpPost]
+        [Route("/genre/edit")]
         public IActionResult Edit(Genre model)
         {
             if (!ModelState.IsValid)
@@ -57,16 +66,19 @@ namespace movies.Controllers
             }
 
         }
+
+        [Route("/genre/all")]
         public IActionResult GenreList()
         {
             var data = _genreService.GetAll().ToList();
             return View(data);
         }
 
+        [Route("/genre/delete")]
         public IActionResult Delete(int id)
         {
             _genreService.Delete(id);
-            return View();
+            return RedirectToAction("GenreList","Genre");
         }
     }
 }
