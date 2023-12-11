@@ -11,6 +11,7 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<IUserAuthenticationService, UserAuthenticationService>();
 builder.Services.AddScoped<IGenreService, GenreService>();
+builder.Services.AddScoped<IFileService, FileService>();
 
 builder.Services.AddDbContext<MyDBContext>(option
     => option.UseSqlServer(builder.Configuration.GetConnectionString("MyConn")));
